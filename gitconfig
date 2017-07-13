@@ -1,16 +1,14 @@
 [user]
-	name = David Davis
-	email = daviddavis@redhat.com
+  name = [your name] 
+  email = [your email] 
 [diff]
   #external = /usr/bin/opendiff
 [alias]
   st = status
-  s = status
   ci = commit
-  c = commit
   cam = commit -a -m
   amend = commit --amend
-  b = branch
+  br = branch
   co = checkout
   cm = commit -m
   su = submodule foreach "git checkout master; git pull"
@@ -24,6 +22,7 @@
   gist = !git diff | gist -p --file=git.diff
 [color]
   ui = auto
+  interactive = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -43,6 +42,8 @@
 [init]
 	templatedir = ~/.git_template
 [github]
-	user = daviddavis
+  user = [your github username]
 [push]
 	default = simple
+[credential]
+  helper = cache
