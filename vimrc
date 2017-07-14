@@ -140,6 +140,7 @@ let g:ctrlp_map = '<c-p>'
 
 " turn on tabline in vim with airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " turn on rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
