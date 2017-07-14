@@ -85,7 +85,7 @@ tmux_conf_theme_mode_attr='bold'
 
 # status line style
 tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
-tmux_conf_theme_status_bg='#080808'                     # dark gray
+tmux_conf_theme_status_bg='#262628'                     # dark gray origin #080808
 tmux_conf_theme_status_attr='none'
 
 # window status style
@@ -158,14 +158,19 @@ tmux_conf_theme_right_separator_sub=''  #   PowerlineSymbols.otf font
 tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} | #{loadavg} '
 tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
 
+# origin status left style for backup and ref
+# tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#c7c400,#e4e4e4'  # black, white , yellow, white
+# tmux_conf_theme_status_left_bg='#ffff00,#ff00af,#d70000,#00afff'  # yellow, pink, red, white blue
+# tmux_conf_theme_status_left_attr='bold,none,none,none'
+#
 # status left style
-tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#c7c400,#e4e4e4'  # black, white , yellow, white
-tmux_conf_theme_status_left_bg='#ffff00,#ff00af,#d70000,#00afff'  # yellow, pink, red, white blue
-tmux_conf_theme_status_left_attr='bold,none,none'
+tmux_conf_theme_status_left_fg='#000000,#000000,#cccccc,#e4e4e4'  # black, black, white, white
+tmux_conf_theme_status_left_bg='#9f9f9f,#696969,#3b424d,#00afff'  # yellow, dark gray, darker gray, white blue
+tmux_conf_theme_status_left_attr='bold,none,none,none'
 
 # status right style
 tmux_conf_theme_status_right_fg='#8a8a8a,#e4e4e4,#000000' # light gray, white, black
-tmux_conf_theme_status_right_bg='#080808,#d70000,#e4e4e4' # dark gray, red, white
+tmux_conf_theme_status_right_bg='#262626,#d70000,#e4e4e4' # dark gray, red, white
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
@@ -219,11 +224,11 @@ tmux_conf_battery_vbar_palette='gradient'
 #tmux_conf_battery_vbar_palette='#d70000,#ff5f00,#5fff00'  # red, orange, green
 
 # symbols used to indicate whether battery is charging or discharging
-tmux_conf_battery_status_charging='↑'       # U+2191
-tmux_conf_battery_status_discharging='↓'    # U+2193
-#tmux_conf_battery_status_charging='⚡ '    # U+26A1
-#tmux_conf_battery_status_charging='🔌 '    # U+1F50C
-#tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
+# tmux_conf_battery_status_charging='↑'       # U+2191
+# tmux_conf_battery_status_discharging='↓'    # U+2193
+# tmux_conf_battery_status_charging='⚡ '    # U+26A1
+tmux_conf_battery_status_charging='🔌 '    # U+1F50C
+tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
 
 # clock style
 tmux_conf_theme_clock_colour='#00afff'  # light blue
@@ -237,7 +242,7 @@ tmux_conf_theme_clock_style='24'
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -255,11 +260,25 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
-# unbind C-a
-# unbind C-b
-# set -g prefix C-a
-# bind C-a send-prefix
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
+bind a send-prefix
 
 # move status line to top
 #set -g status-position top
+
+#################################
+## add my personal configs below.
+#################################
+
+
+# allow Ctrl-a Ctrl-a to cycle panes
+unbind ^A
+bind ^A select-pane -t :.+
+
+# extra commands for splittin
+bind | split-window -h
+bind - split-window -v
