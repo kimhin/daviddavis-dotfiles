@@ -1,0 +1,6 @@
+Tmux config from https://github.com/gpakosz/.tmux
+
+tmux >= 2.1 running inside Linux, Mac, OpenBSD, Cygwin or WSL (Bash on Ubuntu on Windows)
+outside of tmux, $TERM must be set to xterm-256color
+
+Then proceed to customize your ~/.tmux.conf.local copy.
