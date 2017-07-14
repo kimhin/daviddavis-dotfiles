@@ -107,7 +107,8 @@ augroup END
 
 " turn on vim-airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'simple'
+let g:airline_theme = 'wombat'
+" let g:airline_theme = 'simple'
 
 " set the snippets directory
 let g:snippets_dir="~/.vim/snippets"
@@ -133,6 +134,12 @@ let g:airline_powerline_fonts = 1
 
 " set ctrlp results to a higher number
 let g:ctrlp_max_height = 35
+
+" set ctrlp with shortcut ctrl-p
+let g:ctrlp_map = '<c-p>'
+
+" turn on tabline in vim with airline
+let g:airline#extensions#tabline#enabled = 1
 
 " turn on rainbow parentheses
 au VimEnter * RainbowParenthesesToggle
