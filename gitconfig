@@ -1,0 +1,49 @@
+[user]
+  name = [your name]
+  email = [your email]
+[diff]
+  #external = /usr/bin/opendiff
+[alias]
+  st = status
+  ci = commit
+  cam = commit -a -m
+  amend = commit --amend
+  br = branch
+  co = checkout
+  cm = commit -m
+  su = submodule foreach "git checkout master; git pull"
+  pull-all = "!f() { branches=`git branch`; for b in ${branches//'*'/}; do git checkout $b; git pull origin $b; done }; f"
+  sm = submodule
+  #upstream = "!git-upstream $@"
+  up = upstream
+  upr = upstream reset
+  uprh = upstream reset-hard
+  ctags = !.git/hooks/ctags
+  gist = !git diff | gist -p --file=git.diff
+[color]
+  ui = auto
+  interactive = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+	quotepath = false
+	excludesfile = ~/.gitignore
+[init]
+	templatedir = ~/.git_template
+[github]
+  user = [your github user] 
+[push]
+	default = simple
+[credential]
+  helper = cache
