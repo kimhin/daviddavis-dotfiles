@@ -21,7 +21,12 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-[[ -n $ZSH_THEME ]] || export ZSH_THEME="pure"
+if [[ `uname` == 'Darwin' ]]; then
+  [[ -n $ZSH_THEME ]] || export ZSH_THEME='pure'
+fi
+if [[ `uname` == 'Linux' ]]; then
+  [[ -n $ZSH_THEME ]] || export ZSH_THEME='ys'
+fi
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
