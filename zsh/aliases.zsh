@@ -9,7 +9,6 @@ alias -g .....='../../../..'
 # alias gist="gist -p" # automatically make gists private
 alias weather="curl wttr.in/rdu"
 
-alias tag="ctags --tag-relative -Rf.git/tags --exclude=.git --exclude=log --languages=-javascript,sql"
 
 # alias g="nocorrect git"
 # alias gg="g st -s"
@@ -32,11 +31,23 @@ alias tag="ctags --tag-relative -Rf.git/tags --exclude=.git --exclude=log --lang
 # alias irb="pry"
 # alias rs="rails server -b 0.0.0.0" # bind to all interfaces
 
-# w中文,G颜色
-alias ls='ls -wGh'
-alias ll='ls -lwGh'
-alias lsa='ls -awGh'
-alias lla='ls -lawGh'
+if [[ `uname` == 'Darwin' ]]; then
+  # w中文,G颜色 for  MacOS
+  alias ls='ls -wGh'
+  alias ll='ls -lwGh'
+  alias lsa='ls -awGh'
+  alias lla='ls -lawGh'
+
+  alias ctags="`brew --prefix`/bin/ctags"
+fi
+if [[ `uname` == 'Linux' ]]; then
+  alias ls='ls --color=tty'
+  alias ll='ls -lh --color=tty'
+  alias lsa='ls -a --color=tty'
+  alias lla='ls -lah --color=tty'
+fi
+alias tag="ctags --tag-relative -Rf.git/tags --exclude=.git --exclude=log --languages=-javascript,sql"
+
 alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 alias tree2="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias grepi='grep -i'  #case insensitive grep
