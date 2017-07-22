@@ -53,11 +53,13 @@ set splitbelow
 set showcmd
 set textwidth=100
 set modeline
-set cursorline
+" Highlight current line and column, but tooooooo slow on large file and loooong line. Commented
+" these settings.
+" set cursorline
 " set cursorcolumn
-" Highlight the current line only in current active window.
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+" " Highlight the current line only in current active window.
+" autocmd WinEnter * setlocal cursorline
+" autocmd WinLeave * setlocal nocursorline
 
 " toggle paste mode with F2
 set pastetoggle=<F2>
