@@ -33,22 +33,31 @@ set showmode
 set showmatch
 set ignorecase
 set ignorecase smartcase
-set tabstop=2
+" tabstop for display, pay attention, it's column number for tabSTOP, not for tab.
+" softtabstop for insert, others are the same above
+" expandtab for tab to space, opposite is noexpandtab
+" shiftwidth for reident operation using << or >>
+set tabstop=4
 set expandtab
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
+set list listchars=tab:··,trail:·
 set nowrap
 set hlsearch
 set nobackup
 set nowritebackup
 set noswapfile
-set list listchars=tab:··,trail:·
 set autoread
 set splitright
 set splitbelow
 set showcmd
 set textwidth=100
 set modeline
+set cursorline
+" set cursorcolumn
+" Highlight the current line only in current active window.
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 
 " toggle paste mode with F2
 set pastetoggle=<F2>
