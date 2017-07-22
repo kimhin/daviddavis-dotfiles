@@ -39,6 +39,7 @@ if [[ `uname` == 'Darwin' ]]; then
   alias lla='ls -lawGh'
 
   alias ctags="`brew --prefix`/bin/ctags"
+  alias top='top -o cpu'
 fi
 if [[ `uname` == 'Linux' ]]; then
   alias ls='ls --color=tty'
@@ -53,7 +54,6 @@ alias tree2="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias grepi='grep -i'  #case insensitive grep
 alias f='find . -iname'
 alias ducks='du -cks * | sort -rn|head -11' # Lists the size of all the folders and files
-alias top='top -o cpu'
 # shows the commands you use most, it's useful to show you what you should create aliases for
 alias profileme="history | awk '{print $2}' | awk 'BEGIN{FS=\"|\"}{print $1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
 
