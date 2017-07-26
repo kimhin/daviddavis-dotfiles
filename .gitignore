@@ -4,3 +4,4 @@ bin/snap-guest
 bin/hub
 
 gitconfig
+*.log
