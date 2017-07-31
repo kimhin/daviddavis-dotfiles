@@ -8,3 +8,7 @@ export TMUX_SHOW_MAIL=true
 
 # allow brew to override system defaults
 export PATH="/usr/local/bin:$PATH"
+
+# add autojump for macos
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+

@@ -46,30 +46,47 @@ export DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+          autojump
           brew
-          bundler
-          debian
+#          bundler
+#          common-aliases
+#          debian
+#          docker
+#          encode64
           extract
-          fasd
+#          fasd
+#          geeknote
           gem
           git
           git-extras
+#          git_remote_branch
+#          github
           gitignore
+          golang
           httpie
-          node
-          nvm
+          jsontools
+#          mvn
+#          node
+#          nvm
           osx
-          pip
-          python
-          rails
-          rsync
-          ruby
-          rvm
+#          pip
+#          python
+#          rails
+#          redis-cli
+#          rsync
+#          ruby
+#          rvm
+#          sfffe
+          systemadmin
           systemd
-          thor
+#          thor
           tmuxinator
+          torrent
+          urltools
           vundle
-          yum
+          web-search
+#          xcode
+#          yum
         )
 
 # Path to your oh-my-zsh configuration.
