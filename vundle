@@ -82,6 +82,7 @@ Plugin 'tpope/vim-liquid'
 " Plugin 'honza/vim-snippets'
 " vim-markdown must be below godlygeek/tabular
 Plugin 'plasticboy/vim-markdown'
+Plugin 'reedes/vim-pencil'
 Plugin 'junegunn/goyo.vim'
 
 
