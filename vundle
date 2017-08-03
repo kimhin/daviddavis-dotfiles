@@ -11,7 +11,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'danchoi/ruby_bashrockets.vim'
 Plugin 'daviddavis/vim-colorpack'
-Plugin 'edsono/vim-matchit'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
@@ -81,6 +80,9 @@ Plugin 'tpope/vim-liquid'
 " Plugin 'fatih/vim-go'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
+" vim-markdown must be below godlygeek/tabular
+Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/goyo.vim'
 
 
 call vundle#end()

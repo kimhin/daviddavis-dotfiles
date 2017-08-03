@@ -190,6 +190,9 @@ let g:rbpt_colorpairs = [
 
 let g:html_indent_inctags = "p,li"
 
+" for vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
 " ---------------------------------------------------------------------------
 " MAPPINGS
 " ---------------------------------------------------------------------------
