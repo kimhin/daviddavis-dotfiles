@@ -5,8 +5,10 @@ startup-pane: 1
 startup-window: 1
 windows:
     - Monitor:
-        layout: c37e,272x67,0,0{54x67,0,0[54x29,0,0,0,54x37,0,30,2],217x67,55,0,1}
+        # layout: c37e,272x67,0,0{54x67,0,0[54x29,0,0,0,54x37,0,30,2],217x67,55,0,1}
+        layout: b6d7,272x67,0,0{62x67,0,0[62x50,0,0,0,62x6,0,51,1,62x9,0,58,3],209x67,63,0,2} 
         panes:
             - htop
-            - #empty
             - tmux clock-mode -t 2 && clear
+            - watch -n 600 figlet km-bmp725
+            - #empty
