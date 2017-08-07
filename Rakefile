@@ -12,7 +12,7 @@ require 'erb'
 desc "install the dot files into user's home directory"
 task :install do
   Dir['*'].each do |file|
-    next if %w[Rakefile README.rdoc README.md LICENSE install.sh vendor tmux_powerline_themes].include? file
+    next if %w[Rakefile README.rdoc README.md LICENSE install.sh vendor tmux_powerline_themes gitconfig].include? file
 
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       file_name = file.sub('.erb', '')
@@ -28,6 +28,13 @@ task :install do
       link_file(file)
     end
   end
+  process_gitconfig()
+end
+
+def process_gitconfig()
+  system %Q{mv ~/.gitconfig ~/.gitconfig.bak}
+  system %Q{cp gitconfig ~/.gitconfig}
+  puts ".gitconfig(template) has COPIED(not LINKED) to HOME dir."
 end
 
 def replace_file(file)

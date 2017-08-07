@@ -1,50 +1,71 @@
 [user]
-  name = [your name] 
-  email = [your email]
-[diff]
-  #external = /usr/bin/opendiff
-[alias]
-  st = status
-  ci = commit
-  cam = commit -a -m
-  amend = commit --amend
-  br = branch
-  co = checkout
-  cm = commit -m
-  su = submodule foreach "git checkout master; git pull"
-  pull-all = "!f() { branches=`git branch`; for b in ${branches//'*'/}; do git checkout $b; git pull origin $b; done }; f"
-  sm = submodule
-  #upstream = "!git-upstream $@"
-  up = upstream
-  upr = upstream reset
-  uprh = upstream reset-hard
-  ctags = !.git/hooks/ctags
-  gist = !git diff | gist -p --file=git.diff
-[color]
-  ui = auto
-  interactive = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-[core]
-	quotepath = false
-	excludesfile = ~/.gitignore
-[init]
-	templatedir = ~/.git_template
+    name = [your name]
+    email = [your email] 
 [github]
-  user = [your github user]
+    user = [your github username]
+[alias]
+    prune = fetch --prune
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
+    st = status
+    ci = commit
+    cam = commit -a -m
+    amend = commit --amend
+    br = branch
+    co = checkout
+    cm = commit -m
+    su = submodule foreach "git checkout master; git pull"
+    pull-all = "!f() { branches=`git branch`; for b in ${branches//'*'/}; do git checkout $b; git pull origin $b; done }; f"
+    sm = submodule
+    #upstream = "!git-upstream $@"
+    up = upstream
+    upr = upstream reset
+    uprh = upstream reset-hard
+    ctags = !.git/hooks/ctags
+    gist = !git diff | gist -p --file=git.diff
+[init]
+    templatedir = ~/.git_template
 [push]
-	default = simple
+    default = simple
+    followTags = true
+[merge]
+    ff = only
+    conflictstyle = diff3
+[commit]
+    # gpgSign = true
+    # "other people can trust that the changes you've made really were made by you"
+    # https://help.github.com/articles/about-gpg/
+    # https://git-scm.com/docs/git-config#git-config-commitgpgSign
+[transfer]
+    fsckobjects = true
+[status]
+    showUntrackedFiles = all
+[diff]
+    # external = /usr/bin/opendiff
+    tool = vimdiff
+    # tool = icdiff
+[difftool]
+    prompt = false
+    # cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+[color]
+    ui = auto
+    interactive = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+    quotepath = false
+    excludesfile = ~/.gitignore
 [credential]
-  helper = cache
-  # helper = osxkeychain
+    helper = cache
+    # helper = osxkeychain
