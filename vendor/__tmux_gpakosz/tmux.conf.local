@@ -265,7 +265,7 @@ unbind C-a
 unbind C-b
 set -g prefix C-a
 bind C-a send-prefix
-bind a send-prefix
+# bind a send-prefix
 
 # move status line to top
 #set -g status-position top
@@ -280,5 +280,6 @@ unbind ^A
 bind ^A select-pane -t :.+
 
 # extra commands for splittin
+unbind _
 bind | split-window -h
 bind - split-window -v
