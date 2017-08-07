@@ -34,9 +34,11 @@ startup_window: Monitor
 startup_pane: 4
 windows:
     - Monitor:
-        layout: 69fb,272x67,0,0{66x67,0,0[66x12,0,0,0,66x41,0,13,2,66x12,0,55,3],205x67,67,0,1}
+        # layout: 69fb,272x67,0,0{66x67,0,0[66x12,0,0,0,66x41,0,13,2,66x12,0,55,3],205x67,67,0,1}
+        layout: d85a,272x67,0,0{64x67,0,0[64x12,0,0,0,64x36,0,13,1,64x8,0,50,4,64x8,0,59,6],207x67,65,0,3}
         panes:
-            - watch -n5 df -h
+            - watch -n60 df -h
             - top
-            - #empty
             - tmux clock-mode  -t3 && clear
+            - watch -n 600 figlet -c `hostname`
+            - #empty
