@@ -15,7 +15,12 @@ case $1 in
       export https_proxy
       echo 'Command Line Proxy: OFF \n\thttp_proxy'=$http_proxy'\n\thttps_proxy='$https_proxy'\n'
       ;;
+    "status")
+      echo "http_proxy="$http_proxy
+      echo "https_proxy="$https_proxy
+      ;;
     *)
-      echo -e "\033[1;32mUsage: $0 (on|off) \n \033[0m"
+      echo "\033[1;31m!!! Using 'source' to start this shell script !!!"
+      echo "\033[1;32mUsage: source $0 (on|off|status) \n \033[0m"
       ;;
 esac
