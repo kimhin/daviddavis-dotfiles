@@ -49,7 +49,7 @@ if [[ `uname` == 'Linux' ]]; then
 fi
 alias tag="ctags --tag-relative -Rf.git/tags --exclude=.git --exclude=log --languages=-javascript,sql"
 
-alias tree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+alias tree1="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 alias tree2="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias grepi='grep -i'  #case insensitive grep
 alias f='find . -iname'
