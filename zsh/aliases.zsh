@@ -9,7 +9,10 @@ alias -g .....='../../../..'
 # alias gist="gist -p" # automatically make gists private
 alias weather="curl wttr.in/rdu"
 
-
+alias gpullod="git pull origin develop"
+alias gpullgd="git pull github develop"
+alias gpushod="git push origin develop"
+alias gpushgd="git push github develop"
 # alias g="nocorrect git"
 # alias gg="g st -s"
 # alias gs="git stash"
